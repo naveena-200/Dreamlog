@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamLog - Sleep Quality Logger</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>🌙 DreamLog</h1>
+            <p>Track your sleep. Improve your health. Build better habits.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- FORM SECTION -->
+        <section class="card form-card">
+            <h2>Log Your Sleep</h2>
+
+            <form id="sleepForm">
+                <div class="input-group">
+                    <label for="sleepDate">Date</label>
+                    <input type="date" id="sleepDate" required>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="bedTime">Bed Time</label>
+                        <input type="time" id="bedTime" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="wakeTime">Wake Time</label>
+                        <input type="time" id="wakeTime" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="mood">How did you feel?</label>
+                    <select id="mood" required>
+                        <option value="">Select Mood</option>
+                        <option value="😴 Groggy">😴 Groggy</option>
+                        <option value="😐 Okay">😐 Okay</option>
+                        <option value="😊 Good">😊 Good</option>
+                        <option value="😁 Great">😁 Great</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn">Save Sleep Entry</button>
+            </form>
+        </section>
+
+        <!-- STATS SECTION -->
+        <section class="stats-grid">
+
+            <div class="card stat-card">
+                <h3>Average Sleep</h3>
+                <p id="avgSleep">0 hrs</p>
+            </div>
+
+            <div class="card stat-card">
+                <h3>Best Night</h3>
+                <p id="bestNight">0 hrs</p>
+            </div>
+
+            <div class="card stat-card">
+                <h3>Logging Streak</h3>
+                <p id="streak">0 Days</p>
+            </div>
+
+        </section>
+
+        <!-- CHART SECTION -->
+        <section class="card chart-card">
+            <div class="section-title">
+                <h2>7-Day Sleep Overview</h2>
+            </div>
+
+            <div class="chart-wrapper">
+                <div id="chart"></div>
+            </div>
+        </section>
+
+        <!-- TIP SECTION -->
+        <section class="card tip-card">
+            <h2>Sleep Tip</h2>
+            <p id="sleepTip">Your personalized sleep tips will appear here.</p>
+        </section>
+
+        <!-- HISTORY SECTION -->
+        <section class="card history-card">
+            <div class="section-title">
+                <h2>Sleep History</h2>
+                <button id="clearBtn" class="clear-btn">Clear All</button>
+            </div>
+
+            <div id="historyList" class="history-list">
+                <p class="empty-text">No sleep entries yet.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
